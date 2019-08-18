@@ -1,0 +1,11 @@
+version: '3'
+services:
+  redis-service:
+    image: 'redis'
+  node-app:
+    restart: always
+    # options are --> 'no' | always | on-failure | unless-stopped. 
+    # 'no' should be always in quots as in YML file no without quote means false.
+    build: .
+    ports:
+      - "8080:8080"
